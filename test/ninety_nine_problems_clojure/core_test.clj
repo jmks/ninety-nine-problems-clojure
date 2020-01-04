@@ -25,3 +25,8 @@
   (is (= (length '()) 0) "an empty list")
   (is (= (length '(1)) 1) "singleton list")
   (is (= (length '(1 2 3)) 3) "simple list"))
+
+(deftest reverse-test
+  (is (= (my-reverse '()) '()) "an empty list")
+  (is (= (my-reverse '(1)) '(1)) "singleton list")
+  (is (= (my-reverse [1 2 3]) '(3 2 1)) "simple list"))

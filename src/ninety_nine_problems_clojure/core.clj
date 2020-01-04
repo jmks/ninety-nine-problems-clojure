@@ -19,3 +19,8 @@
   "P04 - Find the number of elements of a list."
   [coll]
   (reduce (fn [count _] (inc count)) 0 coll))
+
+(defn my-reverse
+  "P05 - Reverse a list."
+  [coll]
+  (reduce conj '() coll))
