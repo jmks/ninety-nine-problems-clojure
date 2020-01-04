@@ -20,3 +20,8 @@
   (is (= (kth '(:one :two :three) 1) :one) "simple list")
   (is (= (kth '(:one :two :three) 2) :two) "simple list")
   (is (= (kth '(:one :two :three) 3) :three) "simple list"))
+
+(deftest length-test
+  (is (= (length '()) 0) "an empty list")
+  (is (= (length '(1)) 1) "singleton list")
+  (is (= (length '(1 2 3)) 3) "simple list"))

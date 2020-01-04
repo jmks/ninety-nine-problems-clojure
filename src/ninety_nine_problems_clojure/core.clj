@@ -14,3 +14,8 @@
   "P03 - Find the K'th element of a list. The first element in the list is number 1."
   [coll k]
   (nth coll (- k 1)))
+
+(defn length
+  "P04 - Find the number of elements of a list."
+  [coll]
+  (reduce (fn [count _] (inc count)) 0 coll))
