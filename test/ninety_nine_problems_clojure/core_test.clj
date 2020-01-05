@@ -30,3 +30,9 @@
   (is (= (my-reverse '()) '()) "an empty list")
   (is (= (my-reverse '(1)) '(1)) "singleton list")
   (is (= (my-reverse [1 2 3]) '(3 2 1)) "simple list"))
+
+(deftest palindrome-test
+  (is (= (palindrome? '()) true) "vacuously true")
+  (is (= (palindrome? [:one]) true) "singleton always true")
+  (is (= (palindrome? '(1 2 3)) false) "non-palindrome")
+  (is (= (palindrome? [1 2 1]) true) "palindrome"))
