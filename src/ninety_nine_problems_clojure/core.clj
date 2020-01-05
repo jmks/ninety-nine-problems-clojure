@@ -29,3 +29,13 @@
   "P06 - Find out whether a list is a palindrome. A palindrome can be read forward or backward; e.g. (x a m a x)"
   [coll]
   (= coll (reverse coll)))
+
+(defn my-flatten
+  "P07 - Flatten a nested list structure."
+  [coll]
+  (reduce (fn [acc el]
+            (if (coll? el)
+              (concat acc (my-flatten el))
+              (concat acc (list el))))
+          '()
+          coll))

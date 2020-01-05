@@ -36,3 +36,8 @@
   (is (= (palindrome? [:one]) true) "singleton always true")
   (is (= (palindrome? '(1 2 3)) false) "non-palindrome")
   (is (= (palindrome? [1 2 1]) true) "palindrome"))
+
+(deftest flatten-test
+  (is (= (my-flatten '(1 2 3)) '(1 2 3)) "no flattening")
+  (is (= (my-flatten ['(1 2) 3 [4 5]]) '(1 2 3 4 5)) "simple flattening")
+  (is (= (my-flatten [(list 1 [2 (list 3 [4 5])])]) '(1 2 3 4 5)) "deeply nested"))
