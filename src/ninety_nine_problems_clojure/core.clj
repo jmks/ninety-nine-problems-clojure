@@ -39,3 +39,13 @@
               (concat acc (list el))))
           '()
           coll))
+
+(defn compress
+  "P08 - Eliminate consecutive duplicates of list elements."
+  [coll]
+  (reverse (reduce (fn [acc el]
+                     (if (= (first acc) el)
+                       acc
+                       (conj acc el)))
+                   '()
+                   coll)))

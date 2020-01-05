@@ -41,3 +41,7 @@
   (is (= (my-flatten '(1 2 3)) '(1 2 3)) "no flattening")
   (is (= (my-flatten ['(1 2) 3 [4 5]]) '(1 2 3 4 5)) "simple flattening")
   (is (= (my-flatten [(list 1 [2 (list 3 [4 5])])]) '(1 2 3 4 5)) "deeply nested"))
+
+(deftest compress-test
+  (is (= (compress '(1 2 3)) '(1 2 3)) "no compression")
+  (is (= (compress '(1 1 2 2 2 3)) '(1 2 3)) "compression"))
