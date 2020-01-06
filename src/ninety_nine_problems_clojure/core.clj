@@ -3,7 +3,9 @@
 (defn my-last
   "P01 - Find the last element of a list."
   [coll]
-  (last coll))
+  (if (empty? coll)
+    nil
+    (reduce (fn [_ x] x) coll)))
 
 (defn penultimate
   "P02 - Find the last but one element of a list."
