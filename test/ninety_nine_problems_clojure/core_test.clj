@@ -49,3 +49,6 @@
 (deftest pack-test
   (is (= (pack (list 1 1 1 1 2 3 3 1 1 4 5 5 5 5)) (list '(1 1 1 1) '(2) '(3 3) '(1 1) '(4) '(5 5 5 5))))
   (is (= (pack (list 1 2 3)) (list '(1) '(2) '(3))) "no packing just wraps each in list"))
+
+(deftest run-length-encode-test
+  (is (= (run-length-encode (list 1 1 1 1 2 3 3 1 1 4 5 5 5 5)) (list '(4 1) '(1 2) '(2 3) '(2 1) '(1 4) '(4 5)))))
