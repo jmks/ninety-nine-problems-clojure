@@ -45,3 +45,7 @@
 (deftest compress-test
   (is (= (compress '(1 2 3)) '(1 2 3)) "no compression")
   (is (= (compress '(1 1 2 2 2 3)) '(1 2 3)) "compression"))
+
+(deftest pack-test
+  (is (= (pack (list 1 1 1 1 2 3 3 1 1 4 5 5 5 5)) (list '(1 1 1 1) '(2) '(3 3) '(1 1) '(4) '(5 5 5 5))))
+  (is (= (pack (list 1 2 3)) (list '(1) '(2) '(3))) "no packing just wraps each in list"))

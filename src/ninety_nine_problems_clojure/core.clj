@@ -51,3 +51,13 @@
                        (conj acc el)))
                    '()
                    coll)))
+
+(defn pack
+  "P09 - Pack consecutive duplicates of list elements into sublists. If a list contains repeated elements they should be placed in separate sublists."
+  [coll]
+  (reverse (reduce (fn [acc el]
+                     (if (and (= (first (first acc)) el))
+                       (conj (rest acc) (conj (first acc) el))
+                       (conj acc (list el))))
+                   '()
+                   coll)))
