@@ -106,3 +106,8 @@
   "P14 - Duplicate the elements of a list."
   [coll]
   (mapcat #(list % %) coll))
+
+(defn repli
+  "P15  - Replicate the elements of a list a given number of times."
+  [count coll]
+  (mapcat #(repeat count %) coll))

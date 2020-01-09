@@ -66,3 +66,8 @@
   (is (= (dupli '()) '()) "duplicate of empty is empty")
   (is (= (dupli [1]) '(1 1)) "duplicate of singleton")
   (is (= (dupli (list :a :b :c)) (list :a :a :b :b :c :c)) "duplicate of simple list"))
+
+(deftest repli-test
+  (is (= (repli 0 '(1 2 3)) '()) "replicated 0 times is no elements")
+  (is (= (repli 1 [1]) '(1)) "replicated once is identity")
+  (is (= (repli 3 (list :a :b :c)) (list :a :a :a :b :b :b :c :c :c)) "triplicated"))
