@@ -101,3 +101,8 @@
       (if (= els-count 1)
         (cons el (run-length-direct-encode (rest coll)))
         (cons (list els-count el) (run-length-direct-encode (drop-while #(= % el) coll)))))))
+
+(defn dupli
+  "P14 - Duplicate the elements of a list."
+  [coll]
+  (mapcat #(list % %) coll))

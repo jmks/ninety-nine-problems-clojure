@@ -61,3 +61,8 @@
 
 (deftest run-length-direct-encode-test
   (is (= (run-length-direct-encode  (list 1 1 1 1 2 3 3 1 1 4 5 5 5 5)) (list '(4 1) 2 '(2 3) '(2 1) 4 '(4 5)))))
+
+(deftest dupli-test
+  (is (= (dupli '()) '()) "duplicate of empty is empty")
+  (is (= (dupli [1]) '(1 1)) "duplicate of singleton")
+  (is (= (dupli (list :a :b :c)) (list :a :a :b :b :c :c)) "duplicate of simple list"))
