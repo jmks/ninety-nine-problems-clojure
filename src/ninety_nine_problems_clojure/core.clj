@@ -111,3 +111,12 @@
   "P15  - Replicate the elements of a list a given number of times."
   [count coll]
   (mapcat #(repeat count %) coll))
+
+(defn drop-nth
+  "P16 - Drop every N'th element from a list."
+  [nth coll]
+  (let [start (take (- nth 1) coll)
+        end (drop nth coll)]
+    (if (empty? end)
+      start
+      (concat start (drop-nth nth end)))))

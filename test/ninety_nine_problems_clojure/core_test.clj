@@ -71,3 +71,8 @@
   (is (= (repli 0 '(1 2 3)) '()) "replicated 0 times is no elements")
   (is (= (repli 1 [1]) '(1)) "replicated once is identity")
   (is (= (repli 3 (list :a :b :c)) (list :a :a :a :b :b :b :c :c :c)) "triplicated"))
+
+(deftest drop-nth-test
+  (is (= (drop-nth 3 '(1 2)) '(1 2)))
+  (is (= (drop-nth 3 '(1 2 3)) '(1 2)))
+  (is (= (drop-nth 2 '(1 2 3 4)) '(1 3))))
