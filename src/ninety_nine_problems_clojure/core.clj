@@ -85,3 +85,19 @@
               (repeat (first enc) (second enc))
               (list enc)))
           encoded))
+
+(defn run-length-direct-encode
+  "P13 - Run-length encoding of a list (direct solution).
+
+  Implement the so-called run-length encoding data compression method directly.
+
+  i.e. don't explicitly create the sublists containing the duplicates, as in problem 9, but only count them. As in problem P11, simplify the result list by replacing the singleton lists (1 X) by X."
+  [coll]
+  (if (empty? coll)
+    '()
+    (let [el (first coll)
+          els (take-while #(= % el) coll)
+          els-count (length els)]
+      (if (= els-count 1)
+        (cons el (run-length-direct-encode (rest coll)))
+        (cons (list els-count el) (run-length-direct-encode (drop-while #(= % el) coll)))))))
