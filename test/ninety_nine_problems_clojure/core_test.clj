@@ -55,3 +55,6 @@
 
 (deftest modified-run-length-encode-test
   (is (= (modified-run-length-encode '(1 1 1 1 2 3 3 1 1 4 5 5 5 5)) (list '(4 1) 2 '(2 3) '(2 1) 4 '(4 5)))))
+
+(deftest modified-run-length-encode-test
+  (is (= (decode-modified-run-length (list '(4 1) 2 '(2 3) '(2 1) 4 '(4 5))) '(1 1 1 1 2 3 3 1 1 4 5 5 5 5))))

@@ -75,3 +75,13 @@
                         (first elements)
                         (list (length elements) (first elements))))
        (pack coll)))
+
+(defn decode-modified-run-length
+  "P12 - Decode a run-length encoded list.
+  Given a run-length code list generated as specified in problem 11. Construct its uncompressed version."
+  [encoded]
+  (mapcat (fn [enc]
+            (if (list? enc)
+              (repeat (first enc) (second enc))
+              (list enc)))
+          encoded))
