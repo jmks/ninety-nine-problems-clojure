@@ -67,3 +67,11 @@
   [coll]
   (map (fn [ident-elements] (list (length ident-elements) (first ident-elements)))
        (pack coll)))
+
+(defn modified-run-length-encode
+  "P11 - Modified run-length encoding. Modify the result of problem 10 in such a way that if an element has no duplicates it is simply copied into the result list. Only elements with duplicates are transferred as (N E) lists."
+  [coll]
+  (map (fn [elements] (if (= 1 (length elements))
+                        (first elements)
+                        (list (length elements) (first elements))))
+       (pack coll)))
