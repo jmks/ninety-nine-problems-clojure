@@ -120,3 +120,9 @@
     (if (empty? end)
       start
       (concat start (drop-nth nth end)))))
+
+(defn split
+  "P17 -Split a list into two parts; the length of the first part is given.
+   Do not use any predefined predicates."
+  [n coll]
+  (list (take n coll) (drop n coll)))

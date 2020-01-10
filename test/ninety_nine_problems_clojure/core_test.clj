@@ -76,3 +76,7 @@
   (is (= (drop-nth 3 '(1 2)) '(1 2)))
   (is (= (drop-nth 3 '(1 2 3)) '(1 2)))
   (is (= (drop-nth 2 '(1 2 3 4)) '(1 3))))
+
+(deftest split-test
+  (is (= (split 3 '(a b c d e f g)) (list '(a b c) '(d e f g))))
+  (is (= (split 2 '(1)) (list '(1) '())) "split more than length of list"))
