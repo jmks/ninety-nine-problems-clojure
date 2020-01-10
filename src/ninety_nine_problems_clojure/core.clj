@@ -126,3 +126,11 @@
    Do not use any predefined predicates."
   [n coll]
   (list (take n coll) (drop n coll)))
+
+(defn slice
+  "P18 - Extract a slice from a list.
+
+  Given two indices, i and k, the slice is the list containing the elements between the i'th and k'th element of the original list (both limits included). Start counting the elements with 1."
+  [coll start end]
+  (let [start0 (- start 1)]
+    (take (- end start0) (drop start0 coll))))
