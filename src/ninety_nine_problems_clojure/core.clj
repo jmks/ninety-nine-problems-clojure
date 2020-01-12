@@ -142,3 +142,8 @@
                   n
                   (+ (count coll) n))]
     (concat (drop rotated coll) (take rotated coll))))
+
+(defn remove-kth
+  "P20 - Remove the K'th element from a list."
+  [k coll]
+  (concat (take (- k 1) coll) (drop k coll)))

@@ -89,3 +89,10 @@
 (deftest rotate-test
   (is (= (rotate 3 '(a b c d e f g h)) '(d e f g h a b c)))
   (is (= (rotate -2 '(a b c d e f g h)) '(g h a b c d e f))))
+
+(deftest remove-kth-test
+  (is (= (remove-kth 0 '(1 2 3)) '(1 2 3)) "remove none")
+  (is (= (remove-kth 4 '(1 2 3)) '(1 2 3)) "remove none")
+  (is (= (remove-kth 1 '(1 2 3)) '(2 3)) "remove first")
+  (is (= (remove-kth 2 '(1 2 3)) '(1 3)) "remove middle")
+  (is (= (remove-kth 3 '(1 2 3)) '(1 2)) "remove end"))
