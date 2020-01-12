@@ -134,3 +134,11 @@
   [coll start end]
   (let [start0 (- start 1)]
     (take (- end start0) (drop start0 coll))))
+
+(defn rotate
+  "P19 - Rotate a list N places to the left."
+  [n coll]
+  (let [rotated (if (>= n 0)
+                  n
+                  (+ (count coll) n))]
+    (concat (drop rotated coll) (take rotated coll))))

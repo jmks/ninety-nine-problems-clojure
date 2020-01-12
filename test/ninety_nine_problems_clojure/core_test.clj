@@ -85,3 +85,7 @@
   (is (= (slice '(a b c d e f g h i j k) 3 7) '(c d e f g)))
   (is (= (slice '(1 2 3) 4 10) '()) "start beyond lower bound")
   (is (= (slice '(1 2 3) 2 10) '(2 3)) "slice beyond upper bound"))
+
+(deftest rotate-test
+  (is (= (rotate 3 '(a b c d e f g h)) '(d e f g h a b c)))
+  (is (= (rotate -2 '(a b c d e f g h)) '(g h a b c d e f))))
