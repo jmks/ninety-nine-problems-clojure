@@ -102,3 +102,7 @@
   (is (= (insert-at :new 1 '(1 2 3)) (list 1 :new 2 3)) "insert after first")
   (is (= (insert-at :new 2 '(1 2 3)) (list 1 2 :new 3)) "insert in middle")
   (is (= (insert-at :new 4 '(1 2 3)) (list 1 2 3 :new)) "insert at end"))
+
+(deftest my-range-test
+  (is (= (my-range 4 9) '(4 5 6 7 8 9)))
+  (is (= (my-range 1 3) '(1 2 3))))

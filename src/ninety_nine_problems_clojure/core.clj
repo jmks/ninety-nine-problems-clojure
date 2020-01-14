@@ -152,3 +152,12 @@
   "P21 - Insert an element at a given position into a list."
   [el n coll]
   (concat (take n coll) (conj (drop n coll) el)))
+
+(defn my-range
+  "P22 - Create a list containing all integers within a given range."
+  ([start end]
+   (my-range start end end '()))
+  ([start end current acc]
+   (if (= current start)
+     (conj acc current)
+     (my-range start end (- current 1) (conj acc current)))))
