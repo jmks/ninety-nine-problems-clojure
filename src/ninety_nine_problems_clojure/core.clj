@@ -147,3 +147,8 @@
   "P20 - Remove the K'th element from a list."
   [k coll]
   (concat (take (- k 1) coll) (drop k coll)))
+
+(defn insert-at
+  "P21 - Insert an element at a given position into a list."
+  [el n coll]
+  (concat (take n coll) (conj (drop n coll) el)))

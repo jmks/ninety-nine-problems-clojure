@@ -96,3 +96,9 @@
   (is (= (remove-kth 1 '(1 2 3)) '(2 3)) "remove first")
   (is (= (remove-kth 2 '(1 2 3)) '(1 3)) "remove middle")
   (is (= (remove-kth 3 '(1 2 3)) '(1 2)) "remove end"))
+
+(deftest insert-at-test
+  (is (= (insert-at :new 0 '(1 2 3)) (list :new 1 2 3)) "insert at beginning")
+  (is (= (insert-at :new 1 '(1 2 3)) (list 1 :new 2 3)) "insert after first")
+  (is (= (insert-at :new 2 '(1 2 3)) (list 1 2 :new 3)) "insert in middle")
+  (is (= (insert-at :new 4 '(1 2 3)) (list 1 2 3 :new)) "insert at end"))
